@@ -30,7 +30,14 @@ int Fecha::getAnio() {
     return anio;
 }
 void Fecha::mostrarFecha() {
-    cout << dia << "/" << mes << "/" << anio;
+    if (dia < 10) {
+        cout << "0";
+    }
+    cout<<dia<< "/";
+    if (mes < 10) {
+        cout << "0";
+    }
+    cout<<mes<< "/" <<anio;
 }
 
 class Hora {
@@ -55,7 +62,14 @@ int Hora::getMinuto() {
     return minuto;
 }
 void Hora::mostrarHora() {
-    cout << hora << ":" << minuto;
+    if (hora < 10) {
+        cout<< "0";
+    }
+    cout<<hora<< ":";
+    if (minuto < 10) {
+        cout<< "0";
+    }
+    cout<< minuto;
 }
 
 class Examen {
@@ -94,7 +108,11 @@ void Examen::mostrarExamen() {
 
 int main() {
     Examen ex1("Fisica I", 2, 18, 11, 2026, 8, 30);
+    Examen ex2("Programacion Avanzada", 3, 5, 3, 2026, 9, 5);
+
     ex1.mostrarExamen();
+    cout << endl;
+    ex2.mostrarExamen();
 
     return 0;
 }
